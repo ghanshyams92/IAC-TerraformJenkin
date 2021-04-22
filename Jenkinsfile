@@ -1,12 +1,9 @@
   pipeline {
     agent {
-    docker {
-      label 'any'
-      image 'hashicorp/terraform:light'
-      args '--entrypoint='
+      node {
+        label "master"
+      } 
     }
-  }
-
     stages {
       stage('fetch_latest_code') {
         steps {
