@@ -1,9 +1,10 @@
   pipeline {
     agent {
-      node {
-        label "master"
-      } 
+    docker {
+      image 'hashicorp/terraform:light'
+      args '--entrypoint='
     }
+  }
 
     stages {
       stage('fetch_latest_code') {
