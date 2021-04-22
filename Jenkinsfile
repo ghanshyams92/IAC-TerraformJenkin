@@ -14,8 +14,6 @@
       stage('TF Unit Test') {
         steps {
           sh 'terraform validate'
-          sh 'sleep 2'
-          sh 'terraform fmt -check'
         }      
       }
       
