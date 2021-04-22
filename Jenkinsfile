@@ -5,12 +5,19 @@
       } 
     }
     stages {
-      stage('fetch_latest_code') {
+      stage('Fetch Latest_Code') {
         steps {
           git credentialsId: '17371c59-6b11-42c7-bb25-a37a9febb4db', url: 'https://github.com/ghanshyams92/IAC-TerraformJenkin'
         }
       }
-
+      
+      stage('TF Unit Test') {
+        steps {
+          sh 'terraform fmt -check'
+          sh 'terraform validate'
+        }      
+      }
+      
       stage('TF Init&Plan') {
         steps {
           sh 'terraform init'
