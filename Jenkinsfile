@@ -34,7 +34,7 @@
 
       stage('TF Apply') {
         steps {
-          sh 'terraform apply -input=false'
+          sh 'terraform apply -auto-approve -input=false'
         }
       }
     } 
