@@ -32,7 +32,7 @@
         }
       }
 
-      stage('TF Apply') {
+      stage('Provision Infra in Target Cloud') {
         steps {
           sh 'terraform apply -auto-approve -input=false'
         }
