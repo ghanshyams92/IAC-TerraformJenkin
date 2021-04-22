@@ -1,0 +1,13 @@
+- hosts: all
+  become: true
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+  tasks:
+    - name: Transfer the script for partition
+      copy: src=custom_requirement.sh dest=/tmp/custom_requirement.sh mode=0777
+    - name: Execute the script
+      command: sh /tmp/custom_requirement.sh
+    - name: Transfer the script
+      copy: src=scriptsh.sh dest=/tmp/scriptsh.sh mode=0777
+    - name: Execute the script
+      command: sh /tmp/scriptsh.sh
