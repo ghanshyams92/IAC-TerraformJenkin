@@ -13,8 +13,8 @@
       
       stage('TF Unit Test') {
         steps {
-          sh 'terraform fmt -check'
-      }      
+          sh 'terraform validate'
+        }      
       }
       
       stage('TF Init&Plan') {
