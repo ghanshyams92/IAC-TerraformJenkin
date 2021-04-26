@@ -1,9 +1,7 @@
   pipeline {
     agent {
-      node {
-        label "master"
-      } 
-    }
+        label 'jenkins-6346-7751-terraform'
+      }
     stages {
       stage('Fetch Latest_Code') {
         steps {
