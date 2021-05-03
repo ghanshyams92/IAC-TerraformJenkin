@@ -34,7 +34,7 @@
 
       stage('Provision Infra in Target Cloud') {
         steps {
-          sh 'terraform apply -var 'ibmcloud_api_key=\${API_ACCESS_KEY}' -var 'iaas_classic_username=\${API_CLASSIC_USERNAME}' -var 'iaas_classic_api_key=\${API_CLASSIC_KEY}' -auto-approve -input=false'
+          sh 'terraform apply -var 'ibmcloud_api_key=${API_ACCESS_KEY}' -var 'iaas_classic_username=${API_CLASSIC_USERNAME}' -var 'iaas_classic_api_key=${API_CLASSIC_KEY}' -auto-approve -input=false'
         }
       }
     } 
