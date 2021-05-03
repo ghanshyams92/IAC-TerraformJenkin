@@ -22,7 +22,7 @@ resource "ibm_compute_vm_instance" "devops_commander_vminstance" {
   network_speed     	     = 10
   cores                      = 1
   memory                     = 1024
-  disks                      = [25, 0]
+  disks                      = [25, 20]
   user_metadata              = "{\"Triggered by IBM DevOpsCommander\":\"This is a test instance provisioned by IBM DevOps Commander\"}"
   dedicated_acct_host_only   = true
   local_disk                 = false
