@@ -6,11 +6,6 @@ terraform {
     }
   }
  }
-# Create an IBM Cloud infrastructure SSH key. You can find the SSH key surfaces in the infrastructure console under Devices > Manage > SSH Keys
-resource "ibm_compute_ssh_key" "provision_key_dc" {
-  label      = "test_key_dc"
-  public_key = file("~/.ssh/id_rsa.pub")
-}
 resource "ibm_compute_vm_instance" "devops_commander_vminstance" {
   hostname                   = "newhost"
   domain                     = "IBM.cloud"
