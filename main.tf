@@ -1,11 +1,3 @@
-terraform {
-  required_providers {
-    ibm = {
-      source  = "localdomain/provider/ibm"
-      version = "1.10.0"
-    }
-  }
- }
 # Create an IBM Cloud infrastructure SSH key. You can find the SSH key surfaces in the infrastructure console under Devices > Manage > SSH Keys
 resource "ibm_compute_ssh_key" "provision_key_dc" {
   label      = "test_key_dc"
