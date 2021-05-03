@@ -43,7 +43,7 @@
            export ibmcloud_api_key=${API_ACCESS_KEY}
            export iaas_classic_username=${API_CLASSIC_USERNAME}
            export iaas_classic_api_key=${API_CLASSIC_KEY}
-           terraform apply -auto-approve -input=false
+           terraform apply -var 'ibmcloud_api_key=${API_ACCESS_KEY}' -var 'iaas_classic_username=${API_CLASSIC_USERNAME}' -var 'iaas_classic_api_key=${API_CLASSIC_KEY}' -auto-approve -input=false
            """
         }
       }
