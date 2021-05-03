@@ -39,7 +39,12 @@
 
       stage('Provision Infra in Target Cloud') {
         steps {
-          sh 'terraform apply -auto-approve -input=false'
+           sh """
+           export ibmcloud_api_key=${API_ACCESS_KEY}
+           export iaas_classic_username=${API_CLASSIC_USERNAME}
+           export iaas_classic_api_key=${API_CLASSIC_KEY}
+           terraform apply -auto-approve -input=false
+           """
         }
       }
     } 
