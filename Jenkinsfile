@@ -24,8 +24,13 @@
       
       stage('TF Init&Plan') {
         steps {
-          sh 'terraform init'
-          sh 'terraform plan'
+           sh """
+           export ibmcloud_api_key=${API_ACCESS_KEY}
+           export iaas_classic_username=${API_CLASSIC_USERNAME}
+           export iaas_classic_api_key=${API_CLASSIC_KEY}
+           terraform init
+           terraform plan -var 'ibmcloud_api_key=${API_ACCESS_KEY}' -var 'iaas_classic_username=${API_CLASSIC_USERNAME}' -var 'iaas_classic_api_key=${API_CLASSIC_KEY}'
+           """
         }      
       }
 
