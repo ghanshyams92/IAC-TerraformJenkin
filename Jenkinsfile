@@ -4,6 +4,11 @@
         label "master"
       } 
     }
+    environment {
+      ibmcloud_api_key="${API_ACCESS_KEY}"
+      iaas_classic_username="${API_CLASSIC_USERNAME}"
+      iaas_classic_api_key="${API_CLASSIC_KEY}"
+    }
     stages {
       stage('Fetch Latest_Code') {
         steps {
@@ -34,7 +39,7 @@
 
       stage('Provision Infra in Target Cloud') {
         steps {
-          sh 'terraform apply -auto-approve -input=false -var '{ibmcloud_api_key=${API_ACCESS_KEY}}' -var '{iaas_classic_username=${API_CLASSIC_USERNAME}}' -var '{iaas_classic_api_key=${API_CLASSIC_KEY}}''
+          sh 'terraform apply -auto-approve -input=false'
         }
       }
     } 
